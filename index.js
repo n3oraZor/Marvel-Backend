@@ -3,7 +3,7 @@ const express = require("express");
 const app = express();
 const mongoose = require("mongoose");
 app.use(express.json());
-mongoose.connect("mongodb://localhost:27017/marvel");
+mongoose.connect(process.env.MONGODB_URI || "mongodb://localhost:27017/marvel");
 
 //pour sécuriser les données de Github
 require("dotenv").config();
